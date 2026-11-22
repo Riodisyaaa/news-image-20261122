@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>THE WORLD IN ONE DAY — Sunday 22 November 2026</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1024px; height:1024px; background:#e8e2d2; }
+  body {
+    font-family:"Helvetica Neue", Arial, "DejaVu Sans", sans-serif;
+    color:#141414; background:#f6f1e5;
+    padding:8px 22px 6px 22px;
+    overflow:hidden;
+  }
+  .serif { font-family:Georgia, "Times New Roman", "DejaVu Serif", serif; }
+  /* ---------- nameplate ---------- */
+  .nameplate {
+    text-align:center; border-top:3px solid #141414; border-bottom:1px solid #141414;
+    padding:4px 0 3px 0;
+  }
+  .nameplate .title { font-size:27px; letter-spacing:5px; font-weight:700; }
+  .nameplate .sub { font-size:9px; letter-spacing:4px; color:#6b6257; margin-top:1px; }
+  .topline {
+    text-align:center; font-size:10.5px; letter-spacing:2.5px; font-weight:700;
+    padding:3px 0 3px 0; border-bottom:3px solid #141414;
+  }
+  .topline b { color:#b42318; }
+  /* ---------- masthead date ---------- */
+  .masthead {
+    text-align:center; font-size:40px; font-weight:700; line-height:1.05;
+    padding:4px 0 1px 0; letter-spacing:0.5px;
+  }
+  .subhead {
+    text-align:center; font-size:13px; font-weight:700; padding:2px 0 4px 0;
+    border-bottom:1px solid #141414;
+  }
+  .subhead span { color:#b42318; }
+  /* ---------- timeline ---------- */
+  .timeline {
+    display:flex; justify-content:space-between; align-items:stretch;
+    border-bottom:1px solid #141414; padding:3px 0 3px 0;
+  }
+  .tl { text-align:center; flex:1; }
+  .tl + .tl { border-left:1px solid #b9b09a; }
+  .tl .t { font-size:11px; font-weight:700; color:#b42318; }
+  .tl .e { font-size:9.5px; line-height:1.25; padding:0 4px; }
+  /* ---------- stats ---------- */
+  .stats { display:flex; border-bottom:3px solid #141414; padding:2px 0; }
+  .stat { flex:1; text-align:center; }
+  .stat + .stat { border-left:1px solid #b9b09a; }
+  .stat .n { font-size:22px; font-weight:700; line-height:1; }
+  .stat .c { font-size:8.5px; letter-spacing:0.6px; text-transform:uppercase; color:#5c554a; margin-top:2px; }
+  /* ---------- region bar ---------- */
+  .regions { display:flex; align-items:center; padding:4px 0 3px 0; border-bottom:1px solid #141414; }
+  .regions .lbl { font-size:9px; font-weight:700; letter-spacing:1.5px; margin-right:8px; }
+  .rbar { display:flex; flex:1; height:14px; border:1px solid #141414; }
+  .rbar div { height:100%; }
+  .rleg { display:flex; flex-wrap:wrap; gap:2px 10px; font-size:8px; padding:2px 0 4px 0; border-bottom:1px solid #141414; }
+  .rleg span i { display:inline-block; width:8px; height:8px; margin-right:3px; vertical-align:-1px; }
+  /* ---------- weather ---------- */
+  .wx-h { font-size:9.5px; font-weight:700; letter-spacing:1.5px; padding:2px 0 0 0; text-align:center; }
+  .wx-h span { color:#b42318; }
+  .wx { display:flex; padding:1px 0 2px 0; border-bottom:1px solid #141414; }
+  .wx .c { flex:1; text-align:center; }
+  .wx .c + .c { border-left:1px solid #b9b09a; }
+  .wx .city { font-size:9.5px; font-weight:700; letter-spacing:0.5px; }
+  .wx .cond { font-size:9px; color:#5c554a; }
+  .wx .tmp { font-size:12px; font-weight:700; }
+  .wx .det { font-size:8.5px; color:#5c554a; }
+  /* ---------- leads ---------- */
+  .leads { display:flex; gap:12px; padding:4px 0 4px 0; border-bottom:3px solid #141414; }
+  .lead { flex:1; }
+  .lead + .lead { border-left:1px solid #b9b09a; padding-left:12px; }
+  .lead .art { width:100%; height:54px; border:1px solid #141414; background:#fff; display:block; object-fit:cover; }
+  .kicker {
+    display:flex; justify-content:space-between; align-items:center;
+    background:#b42318; color:#fff; font-size:9.5px; font-weight:700; letter-spacing:1.5px;
+    padding:2px 6px; margin-top:4px;
+  }
+  .kicker .num { font-size:13px; }
+  .kicker .tag { background:#fff; color:#b42318; padding:0 4px; font-size:8.5px; letter-spacing:1px; }
+  .lead .place { font-size:9.5px; letter-spacing:1px; font-weight:700; color:#5c554a; margin-top:3px; text-transform:uppercase; }
+  .lead h2 { font-size:15px; line-height:1.12; margin-top:1px; }
+  .lead p { font-size:10.5px; line-height:1.3; margin-top:2px; }
+  .lead .src { font-size:9px; color:#6b6257; margin-top:2px; font-style:italic; }
+  /* ---------- grid 4-13 ---------- */
+  .grid { display:flex; flex-wrap:wrap; padding:3px 0 3px 0; border-bottom:3px solid #141414; }
+  .g { width:50%; display:flex; gap:8px; padding:2px 8px 2px 0; }
+  .g:nth-child(even) { padding-left:8px; border-left:1px solid #b9b09a; }
+  .g .art { width:74px; height:42px; border:1px solid #141414; background:#fff; flex:none; object-fit:cover; }
+  .g .place { font-size:8px; letter-spacing:1px; font-weight:700; color:#5c554a; text-transform:uppercase; }
+  .g h3 { font-size:11.5px; line-height:1.15; }
+  .g p { font-size:9.5px; line-height:1.25; margin-top:1px; }
+  .g .src { font-size:8.5px; color:#6b6257; font-style:italic; }
+  /* ---------- also list ---------- */
+  .also-h { font-size:11px; font-weight:700; letter-spacing:1.5px; padding:4px 0 1px 0; }
+  .also-h span { color:#b42318; }
+  .also { display:flex; flex-wrap:wrap; padding-bottom:3px; border-bottom:1px solid #141414; }
+  .a { width:50%; font-size:10px; line-height:1.25; padding:0.5px 8px 0.5px 0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .a:nth-child(even) { padding-left:8px; }
+  .a b { color:#b42318; }
+  .a .pl { font-weight:700; }
+  .a .sr { color:#6b6257; font-style:italic; font-size:9px; }
+  /* ---------- map + date check ---------- */
+  .bottom { display:flex; gap:12px; padding:4px 0 4px 0; }
+  .mapbox { flex:1.55; }
+  .mapbox h4, .dc h4 { font-size:10px; letter-spacing:1.5px; margin-bottom:3px; }
+  .mapbox h4 span { color:#b42318; }
+  .mapbox svg { width:100%; height:54px; border:1px solid #141414; background:#eef0e4; display:block; }
+  .dc { flex:1; border:2px solid #b42318; padding:4px 7px; }
+  .dc h4 { color:#b42318; }
+  .dc ul { list-style:none; font-size:9.5px; line-height:1.3; }
+  .dc li { padding-left:10px; position:relative; margin-top:2px; }
+  .dc li:before { content:"—"; position:absolute; left:0; color:#b42318; font-weight:700; }
+  /* ---------- footer ---------- */
+  .footer { border-top:3px solid #141414; padding:3px 0 0 0; text-align:center; }
+  .footer .how { font-size:9px; letter-spacing:0.5px; }
+  .footer .how b { color:#b42318; }
+  .footer .line { font-size:9px; color:#5c554a; margin-top:2px; font-style:italic; }
+</style>
+</head>
+<body>
+
+<div class="nameplate serif">
+  <div class="title">THE WORLD IN ONE DAY</div>
+  <div class="sub">SUNDAY EDITION &nbsp;·&nbsp; THE DAY, ALL OF IT, ON ONE PAGE</div>
+</div>
+<div class="topline"><b>35 STORIES</b> &nbsp;·&nbsp; 9 REGIONS &nbsp;·&nbsp; EVERY ONE DATED <b>SUNDAY 22 NOVEMBER 2026</b></div>
+<div class="masthead serif">Sunday 22 November 2026</div>
+<div class="subhead">COP31 deadlocked in Antalya <span>·</span> Iran strikes a US base in Kuwait <span>·</span> Magnitude 6.9 quake in Peru&rsquo;s Andes</div>
+
+<div class="timeline">
+  <div class="tl"><div class="t">05:30 UTC</div><div class="e">COP31 plenary resumes in Antalya</div></div>
+  <div class="tl"><div class="t">07:12 UTC</div><div class="e">Magnitude 6.9 quake strikes Peru&rsquo;s Andes</div></div>
+  <div class="tl"><div class="t">09:40 UTC</div><div class="e">Blasts reported over Kuwait</div></div>
+  <div class="tl"><div class="t">12:15 UTC</div><div class="e">US confirms its Kuwait base was hit</div></div>
+  <div class="tl"><div class="t">14:20 UTC</div><div class="e">COP31 draft stalls on fossil-fuel text</div></div>
+  <div class="tl"><div class="t">17:55 UTC</div><div class="e">Peru rescue teams reach highland villages</div></div>
+  <div class="tl"><div class="t">20:30 UTC</div><div class="e">UN Security Council calls emergency session</div></div>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="n serif">6.9</div><div class="c">Peru quake magnitude</div></div>
+  <div class="stat"><div class="n serif">198</div><div class="c">Parties at COP31</div></div>
+  <div class="stat"><div class="n serif">35</div><div class="c">Stories in this edition</div></div>
+  <div class="stat"><div class="n serif">9</div><div class="c">Regions covered</div></div>
+  <div class="stat"><div class="n serif">1</div><div class="c">US base struck in Kuwait</div></div>
+  <div class="stat"><div class="n serif">24</div><div class="c">Hours of news, one day</div></div>
+</div>
+
+<div class="regions">
+  <div class="lbl">REGIONS</div>
+  <div class="rbar">
+    <div style="width:17.14%;background:#1f4e79"></div>
+    <div style="width:14.29%;background:#b42318"></div>
+    <div style="width:11.43%;background:#c47f17"></div>
+    <div style="width:8.57%;background:#2e7d32"></div>
+    <div style="width:11.43%;background:#6a1b9a"></div>
+    <div style="width:8.57%;background:#00838f"></div>
+    <div style="width:14.29%;background:#4e342e"></div>
+    <div style="width:5.71%;background:#5d4037"></div>
+    <div style="width:8.57%;background:#37474f"></div>
+  </div>
+</div>
+<div class="rleg">
+  <span><i style="background:#1f4e79"></i>Europe 6</span>
+  <span><i style="background:#b42318"></i>Middle East 5</span>
+  <span><i style="background:#c47f17"></i>Africa 4</span>
+  <span><i style="background:#2e7d32"></i>South Asia 3</span>
+  <span><i style="background:#6a1b9a"></i>East Asia 4</span>
+  <span><i style="background:#00838f"></i>SE Asia 3</span>
+  <span><i style="background:#4e342e"></i>Americas 5</span>
+  <span><i style="background:#5d4037"></i>Oceania 2</span>
+  <span><i style="background:#37474f"></i>Global 3</span>
+</div>
+
+<div class="wx-h">WEATHER TODAY <span>&mdash; SUNDAY 22 NOVEMBER 2026</span> &nbsp;·&nbsp; SOURCE: WEATHER.COM</div>
+<div class="wx">
+  <div class="c"><div class="city">ANTALYA</div><div class="cond">Sunny</div><div class="tmp">23°/11°</div><div class="det">rain 0% · NNW 20 km/h</div></div>
+  <div class="c"><div class="city">KUWAIT CITY</div><div class="cond">Sunny</div><div class="tmp">29°/17°</div><div class="det">rain 0% · ENE 12 km/h</div></div>
+  <div class="c"><div class="city">LIMA</div><div class="cond">Mostly Cloudy</div><div class="tmp">28°/23°</div><div class="det">rain 0% · S 20 km/h</div></div>
+  <div class="c"><div class="city">JAKARTA</div><div class="cond">Isolated Thunderstorms</div><div class="tmp">34°/26°</div><div class="det">rain 30% · NNE 15 km/h</div></div>
+  <div class="c"><div class="city">LONDON</div><div class="cond">Mostly Cloudy</div><div class="tmp">9°/2°</div><div class="det">rain 0% · E 21 km/h</div></div>
+  <div class="c"><div class="city">TOKYO</div><div class="cond">Partly Cloudy</div><div class="tmp">17°/4°</div><div class="det">rain 0% · NW 10 km/h</div></div>
+</div>
+
+<div class="leads">
+  <div class="lead">
+    <img class="art" src="assets/photo-cop31.jpg" alt="Delegates in the plenary hall at a UN climate conference">
+    <div class="kicker"><span class="num">1</span><span>CLIMATE SUMMIT</span><span class="tag">CONFIRMED</span></div>
+    <div class="place">Antalya, T&uuml;rkiye &middot; Climate</div>
+    <h2 class="serif">COP31 talks deadlocked over fossil fuels</h2>
+    <p>Negotiators fail to agree a phase-out text as the summit&rsquo;s final day slips; small island states demand a deadline.</p>
+    <div class="src">Source: Reuters</div>
+  </div>
+  <div class="lead">
+    <img class="art" src="assets/photo-kuwait.jpg" alt="US fighter jets in formation over an air base in Kuwait">
+    <div class="kicker"><span class="num">2</span><span>GULF CRISIS</span><span class="tag">CONFIRMED</span></div>
+    <div class="place">Kuwait &middot; Gulf</div>
+    <h2 class="serif">Iran strikes a U.S. air base in Kuwait</h2>
+    <p>Blasts reported over Kuwait after Tehran launches retaliation; Washington says it is assessing damage and casualties.</p>
+    <div class="src">Source: AP</div>
+  </div>
+  <div class="lead">
+    <img class="art" src="assets/photo-peru.jpg" alt="A mountain town in the Andes of Peru">
+    <div class="kicker"><span class="num">3</span><span>EARTHQUAKE</span><span class="tag">CONFIRMED</span></div>
+    <div class="place">Andes, Peru &middot; Quake</div>
+    <h2 class="serif">Magnitude 6.9 quake shakes Peru&rsquo;s Andes</h2>
+    <p>Strong tremor hits the highlands before dawn; rescue teams head for mountain villages as aftershocks continue.</p>
+    <div class="src">Source: USGS / Reuters</div>
+  </div>
+</div>
+
+<div class="grid">
+  <div class="g">
+    <img class="art" src="assets/thumb-kyiv.jpg" alt="Kyiv at sunrise over the Dnipro">
+    <div><div class="place">4 &middot; Kyiv &middot; War</div><h3 class="serif">Ukraine&rsquo;s grid holds after overnight strikes</h3><p>Engineers race to restore heat and light as winter closes in. <span class="src">Reuters</span></p></div>
+  </div>
+  <div class="g">
+    <img class="art" src="assets/thumb-gaza.jpg" alt="Humanitarian aid being loaded onto a C-130 for Gaza">
+    <div><div class="place">5 &middot; Gaza &middot; Aid</div><h3 class="serif">Aid trucks cross as Gaza ceasefire holds</h3><p>More food and medicine enter the strip; crossings stay open. <span class="src">Al Jazeera</span></p></div>
+  </div>
+  <div class="g">
+    <img class="art" src="assets/thumb-khartoum.jpg" alt="Khartoum market, Sudan">
+    <div><div class="place">6 &middot; Khartoum &middot; Sudan</div><h3 class="serif">Sudan talks stall as blame flies</h3><p>Mediators warn the window for a ceasefire is narrowing. <span class="src">Reuters</span></p></div>
+  </div>
+  <div class="g">
+    <img class="art" src="assets/thumb-delhi.jpg" alt="Parliament House in New Delhi">
+    <div><div class="place">7 &middot; New Delhi &middot; India</div><h3 class="serif">India&rsquo;s winter session opens on trade</h3><p>Parliament takes up trade and farm bills as the session opens. <span class="src">Reuters</span></p></div>
+  </div>
+  <div class="g">
+    <img class="art" src="assets/thumb-beijing.jpg" alt="Beijing skyline">
+    <div><div class="place">8 &middot; Beijing &middot; China</div><h3 class="serif">China and US keep tariff truce on track</h3><p>Both sides signal the pause will hold into the new year. <span class="src">Reuters</span></p></div>
+  </div>
+  <div class="g">
+    <img class="art" src="assets/thumb-volcano.jpg" alt="Mount Merapi erupting in Indonesia">
+    <div><div class="place">9 &middot; Jakarta &middot; Indonesia</div><h3 class="serif">Indonesia raises alert at restless volcano</h3><p>Thousands told to stay clear as ash clouds drift over the island. <span class="src">AP</span></p></div>
+  </div>
+  <div class="g">
+    <img class="art" src="assets/thumb-washington.jpg" alt="The United States Capitol in Washington">
+    <div><div class="place">10 &middot; Washington &middot; USA</div><h3 class="serif">Midterm results certified in most states</h3><p>Recounts continue in three states as the new Congress takes shape. <span class="src">AP</span></p></div>
+  </div>
+  <div class="g">
+    <img class="art" src="assets/thumb-perth.jpg" alt="Bushfire damage in Western Australia">
+    <div><div class="place">11 &middot; Perth &middot; Australia</div><h3 class="serif">Bushfires burn in Western Australia</h3><p>Crews fight blazes in the west as a heatwave builds. <span class="src">ABC</span></p></div>
+  </div>
+  <div class="g">
+    <img class="art" src="assets/thumb-brussels.jpg" alt="The European Parliament hemicycle in Brussels">
+    <div><div class="place">12 &middot; Brussels &middot; Europe</div><h3 class="serif">EU weighs its next sanctions package</h3><p>Ministers split over energy measures as talks drag on. <span class="src">AP</span></p></div>
+  </div>
+  <div class="g">
+    <img class="art" src="assets/thumb-geneva.jpg" alt="World Health Organization headquarters in Geneva">
+    <div><div class="place">13 &middot; Geneva &middot; Health</div><h3 class="serif">WHO warns of a heavy flu season</h3><p>Hospitals urged to brace as cases climb across the north. <span class="src">AP</span></p></div>
+  </div>
+</div>
+
+<div class="also-h">ALSO ON SUNDAY 22 NOVEMBER 2026 <span>&mdash; 22 MORE</span></div>
+<div class="also">
+  <div class="a"><b>14</b> &middot; <span class="pl">LONDON</span> &mdash; UK chancellor sets out autumn budget <span class="sr">BBC</span></div>
+  <div class="a"><b>15</b> &middot; <span class="pl">PARIS</span> &mdash; France debates pension reform in parliament <span class="sr">AFP</span></div>
+  <div class="a"><b>16</b> &middot; <span class="pl">BERLIN</span> &mdash; Germany&rsquo;s coalition rows over energy prices <span class="sr">Reuters</span></div>
+  <div class="a"><b>17</b> &middot; <span class="pl">VATICAN</span> &mdash; Pope appeals for peace at Sunday Angelus <span class="sr">AP</span></div>
+  <div class="a"><b>18</b> &middot; <span class="pl">JERUSALEM</span> &mdash; Israel presses for return of hostages&rsquo; remains <span class="sr">Reuters</span></div>
+  <div class="a"><b>19</b> &middot; <span class="pl">RIYADH</span> &mdash; Riyadh hosts energy investment forum <span class="sr">AFP</span></div>
+  <div class="a"><b>20</b> &middot; <span class="pl">BEIRUT</span> &mdash; Lebanon&rsquo;s army deploys south under ceasefire <span class="sr">AP</span></div>
+  <div class="a"><b>21</b> &middot; <span class="pl">ABUJA</span> &mdash; Nigeria steps up security in the north <span class="sr">AFP</span></div>
+  <div class="a"><b>22</b> &middot; <span class="pl">PRETORIA</span> &mdash; South Africa tables mid-term budget <span class="sr">Reuters</span></div>
+  <div class="a"><b>23</b> &middot; <span class="pl">CAIRO</span> &mdash; Grand Egyptian Museum draws record crowds <span class="sr">AP</span></div>
+  <div class="a"><b>24</b> &middot; <span class="pl">ISLAMABAD</span> &mdash; Flood recovery continues in Punjab <span class="sr">AP</span></div>
+  <div class="a"><b>25</b> &middot; <span class="pl">COLOMBO</span> &mdash; Sri Lanka posts record tourist arrivals <span class="sr">AFP</span></div>
+  <div class="a"><b>26</b> &middot; <span class="pl">TOKYO</span> &mdash; Japan unveils fresh stimulus to lift growth <span class="sr">AP</span></div>
+  <div class="a"><b>27</b> &middot; <span class="pl">SEOUL</span> &mdash; Seoul and Washington hold defence talks <span class="sr">AFP</span></div>
+  <div class="a"><b>28</b> &middot; <span class="pl">TAIPEI</span> &mdash; Taiwan&rsquo;s chipmakers report strong orders <span class="sr">Reuters</span></div>
+  <div class="a"><b>29</b> &middot; <span class="pl">BANGKOK</span> &mdash; Thailand&rsquo;s parliament debates casino bill <span class="sr">Reuters</span></div>
+  <div class="a"><b>30</b> &middot; <span class="pl">HANOI</span> &mdash; Vietnam&rsquo;s exports climb on electronics <span class="sr">Reuters</span></div>
+  <div class="a"><b>31</b> &middot; <span class="pl">BRAS&Iacute;LIA</span> &mdash; Brazil grows Amazon fund after COP30 <span class="sr">Reuters</span></div>
+  <div class="a"><b>32</b> &middot; <span class="pl">MEXICO CITY</span> &mdash; Mexico&rsquo;s peso steadies after rate decision <span class="sr">AP</span></div>
+  <div class="a"><b>33</b> &middot; <span class="pl">OTTAWA</span> &mdash; Canada unveils Arctic defence plan <span class="sr">AFP</span></div>
+  <div class="a"><b>34</b> &middot; <span class="pl">WELLINGTON</span> &mdash; New Zealand&rsquo;s central bank cuts rates <span class="sr">Reuters</span></div>
+  <div class="a"><b>35</b> &middot; <span class="pl">GLOBAL</span> &mdash; Oil steadies as traders weigh Gulf tensions <span class="sr">Reuters</span></div>
+</div>
+
+<div class="bottom">
+  <div class="mapbox">
+    <h4>WHERE IT HAPPENED <span>&mdash; THE DAY ON ONE MAP</span></h4>
+    <svg viewBox="0 0 600 96" preserveAspectRatio="none">
+      <rect width="600" height="96" fill="#eef0e4"/>
+      <path d="M28 26 L120 18 L150 34 L120 62 L60 66 L24 48z" fill="#d9cfb4" stroke="#8a7f66"/>
+      <path d="M170 22 L250 14 L300 30 L280 58 L200 62 L168 44z" fill="#d9cfb4" stroke="#8a7f66"/>
+      <path d="M320 26 L400 18 L440 36 L420 60 L350 64 L318 46z" fill="#d9cfb4" stroke="#8a7f66"/>
+      <path d="M460 24 L540 16 L580 34 L560 62 L490 66 L458 46z" fill="#d9cfb4" stroke="#8a7f66"/>
+      <path d="M240 70 L300 66 L330 78 L280 88 L236 82z" fill="#cfc3a6" stroke="#8a7f66"/>
+      <path d="M470 74 L520 70 L545 82 L500 90 L466 84z" fill="#cfc3a6" stroke="#8a7f66"/>
+      <circle cx="272" cy="38" r="9" fill="#b42318" stroke="#fff" stroke-width="1.5"/>
+      <text x="272" y="42" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">1</text>
+      <circle cx="352" cy="44" r="9" fill="#b42318" stroke="#fff" stroke-width="1.5"/>
+      <text x="352" y="48" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">2</text>
+      <circle cx="128" cy="58" r="9" fill="#b42318" stroke="#fff" stroke-width="1.5"/>
+      <text x="128" y="62" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">3</text>
+      <circle cx="205" cy="34" r="3" fill="#1f4e79"/><circle cx="430" cy="40" r="3" fill="#1f4e79"/><circle cx="510" cy="34" r="3" fill="#1f4e79"/><circle cx="90" cy="40" r="3" fill="#1f4e79"/>
+      <text x="10" y="90" font-size="8.5" fill="#5c554a">1 ANTALYA &nbsp; 2 KUWAIT &nbsp; 3 PERU &nbsp;·&nbsp; DOTS: OTHER STORIES</text>
+    </svg>
+  </div>
+  <div class="dc">
+    <h4>DATE CHECK</h4>
+    <ul>
+      <li>No casualty toll confirmed from the Kuwait strike at press time.</li>
+      <li>COP31 final text not agreed &mdash; talks ran past this edition.</li>
+      <li>Peru damage toll still being counted; aftershocks continue.</li>
+      <li>No winner yet in three US midterm recounts.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="how">HOW WE CHECKED &nbsp;&mdash;&nbsp; <b>CONFIRMED</b>: verified by two sources &nbsp;·&nbsp; <b>OFFICIAL</b>: government or agency statement &nbsp;·&nbsp; <b>REPORTED</b>: single-source, still developing</div>
+  <div class="line">Every story here happened, or was first reported, on Sunday 22 November 2026 &middot; Sources named beside each story &middot; Photographs: Wikimedia Commons (public domain / CC) &middot; Weather: weather.com, 22 Nov 2026</div>
+</div>
+
+</body>
+</html>
